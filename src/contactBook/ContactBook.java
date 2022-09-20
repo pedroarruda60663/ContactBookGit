@@ -20,7 +20,9 @@ public class ContactBook {
         return searchIndex(name) >= 0;
     }
 
-
+    public boolean hasPhone(int phone) {
+        return searchIndexPhone(phone) >= 0;
+    }
 
     //Pre: name!= null && !hasContact(name)
     public void addContact(String name, int phone, String email) {
@@ -98,7 +100,7 @@ public class ContactBook {
     public boolean haveSame(){
         boolean value = false;
         for(int i = 0; i < counter; i++){
-            for(int l = 0; 0 < counter; l++){
+            for(int l = i+1; l < counter; l++){
                 if (contacts[l].getPhone() == contacts[i].getPhone()){ value = true;}
             }
         }

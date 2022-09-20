@@ -13,8 +13,8 @@ public class Main {
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
-
     public static final String GET_CONTACT = "GN";
+    public static final String SAME_PHONE = "EP";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -26,8 +26,7 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
-
-    public static final String PHONE_NOT_EXIST = "contactBook.Phone does not exist.";
+    public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -59,6 +58,9 @@ public class Main {
                     break;
                 case GET_CONTACT:
                     getContact(in,cBook);
+                    break;
+                case SAME_PHONE:
+                    epCommand(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -165,10 +167,12 @@ public class Main {
         } else System.out.println(PHONE_NOT_EXIST);
     }
 
-    private static void EPcommand(){
+    private static void epCommand(ContactBook cBook){
         if (cBook.haveSame()){
             System.out.println("There are contacts that share phone numbers.");
+
         }
-        else System.out.println("All contacts have different phone numbers");
+        else System.out.println("All contacts have different phone numbers.");
+
     }
 }
