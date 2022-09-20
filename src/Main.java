@@ -155,13 +155,20 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
 
+
     private static void getContact(Scanner in, ContactBook cBook) {
         int phone;
         phone = in.nextInt();
         in.nextLine();
         if (cBook.hasPhone(phone)) {
             System.out.println(cBook.getContact(phone));
+        } else System.out.println(PHONE_NOT_EXIST);
+    }
+
+    private static void EPcommand(){
+        if (cBook.haveSame()){
+            System.out.println("There are contacts that share phone numbers.");
         }
-        else System.out.println(PHONE_NOT_EXIST);
+        else System.out.println("All contacts have different phone numbers");
     }
 }
