@@ -20,6 +20,10 @@ public class ContactBook {
         return searchIndex(name) >= 0;
     }
 
+    public boolean hasPhone(int phone) {
+        return searchIndexPhone(phone) >= 0;
+    }
+
     public int getNumberOfContacts() {
         return counter;
     }
